@@ -129,8 +129,8 @@ There are a few ways that you can trigger a re-render in a React component:
 - starts with "use" (both -react and custom hooks)
 - component must be uppercase
 - invoke inside function/component body
-- don't call hooks conditionally (cover later)
-- set functions don't update state immediately (cover later)
+- don't call hooks conditionally (Will cover this later )
+- set functions don't update state immediately (Will cover this later)
 
 #### useState with Array
 
@@ -403,7 +403,7 @@ const ComponentExample = () => {
   const [value, setValue] = useState(0);
   const sayHello = () => {
     console.log('hello there');
-    // be careful
+    // be careful, you will have inifinte loop here 
     // setValue(value + 1);
   };
   sayHello();
