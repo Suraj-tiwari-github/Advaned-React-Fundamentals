@@ -267,7 +267,7 @@ ul {
 }
 
 .users {
-  max-width: 90vw;
+  /* max-width: 90vw; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
