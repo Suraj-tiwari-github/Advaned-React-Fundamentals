@@ -7,7 +7,7 @@ const MultipleReturnsFetchData = () => {
   const [error, SetError] = useState(false);
 
   // const userValue = {
-    //* this is not working
+  //* this is not working
   //   avatar_url: null,
   //   events_url: null,
   //   name: null,
@@ -15,47 +15,44 @@ const MultipleReturnsFetchData = () => {
   //   bio: null,
   // };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await fetch(url);
-        if (!res.ok) {
-          SetError(true);
-          setIsLoading(false);
-          return;
-        }
-        const data = await res.json();
-        console.log(data);
-        setData(data);
-        
-        //* This is not working too
-        // userValue.avatar_url=data.avatar_url;
-        // userValue.bio=data.bio;
-        // userValue.company=data.company;
-        // userValue.events_url=data.events_url;
-        // userValue.name=data.name;
-        //* This is not working too
-
-      } catch (error) {
+  const fetchUser = async () => {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
         SetError(true);
-        console.log(error);
+        setIsLoading(false);
+        return;
       }
-      setIsLoading(false);
-    };
-    fetchUser();
-  }, []);
-  
+      const data = await res.json();
+      console.log(data);
+      setData(data);
+
+      //* This is not working too
+      // userValue.avatar_url=data.avatar_url;
+      // userValue.bio=data.bio;
+      // userValue.company=data.company;
+      // userValue.events_url=data.events_url;
+      // userValue.name=data.name;
+      //* This is not working too
+    } catch (error) {
+      SetError(true);
+      console.log(error);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {fetchUser()}, []);
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
-  
+
   if (error) {
     return <h2>A Error has Occurred</h2>;
   }
-  
-  
-  const {avatar_url,events_url,name,company,bio}=data;
-  
+
+  const { avatar_url, events_url, name, company, bio } = data;
+
   return (
     <div>
       <h2>Fetch Data</h2>
