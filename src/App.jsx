@@ -1,15 +1,21 @@
-import React from 'react';
-import Starter from "./tutorial/03-conditional-rendering/starter/07-user-challenge"
-import final from './tutorial/03-conditional-rendering/final/07-user-challenge'
+import { Test } from './tutorial/04-project-structure/Example/Test';
+import React from "react";
+
+import Example from "./tutorial/04-project-structure/Example";
+
+// import { Home,About } from "./tutorial/04-project-structure/starter/Pages";
 
 function App() {
   return (
     <div className="container">
-      
+      {/* <Navbar /> */}
 
-      
-      <Starter />
-      {/* <final/> */}
+      {/* <Home/>
+      <About/> */}
+
+      <Example />
+
+      <Test     />
     </div>
   );
 }
