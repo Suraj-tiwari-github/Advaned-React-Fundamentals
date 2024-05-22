@@ -1,21 +1,10 @@
-import { Test } from './tutorial/04-project-structure/Example/Test';
-import React from "react";
-
-import Example from "./tutorial/04-project-structure/Example";
-
-// import { Home,About } from "./tutorial/04-project-structure/starter/Pages";
+import List from "./tutorial/05-leverage-javascript/starter/List.jsx";
 
 function App() {
   return (
     <div className="container">
-      {/* <Navbar /> */}
-
-      {/* <Home/>
-      <About/> */}
-
-      <Example />
-
-      <Test     />
+      <h2>Leveraging JavaScript</h2>
+      <List />
     </div>
   );
 }
