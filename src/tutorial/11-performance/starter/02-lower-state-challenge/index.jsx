@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { data } from '../../../../data';
 import List from './List';
+import {people, setPeople, addPerson} from './AddPerson';
 const LowerStateChallenge = () => {
-  const [people, setPeople] = useState(data);
+  // const [people, setPeople] = useState(data);
   const [name, setName] = useState('');
 
   const handleSubmit = (e) => {
@@ -11,14 +12,16 @@ const LowerStateChallenge = () => {
       alert('Please Provide Name Value');
       return;
     }
+    // addPerson();
     addPerson();
+
     setName('');
   };
-  const addPerson = () => {
-    const fakeId = Date.now();
-    const newPerson = { id: fakeId, name };
-    setPeople([...people, newPerson]);
-  };
+  // const addPerson = () => {
+  //   const fakeId = Date.now();
+  //   const newPerson = { id: fakeId, name };
+  //   setPeople([...people, newPerson]);
+  // };
   return (
     <section>
       <form className='form' onSubmit={handleSubmit}>
